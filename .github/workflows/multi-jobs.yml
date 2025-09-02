@@ -1,0 +1,23 @@
+name: Workflow multi-jobs
+
+on: workflow_dispatch
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Étape de build
+        run: |
+          echo " je simule un build..."
+          echo "BUILD_PATH=dist/" >> $GITHUB_ENV
+
+      - name: Affichage de la variable
+        run: echo "Répertoire de build : $BUILD_PATH"
+
+  test:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Étape de test
+        run: echo "Je teste le code (après build)"
+
