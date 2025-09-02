@@ -1,0 +1,17 @@
+name: Push Trigger
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  show-info:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Affichage des infos système
+        run: |
+          echo "Déclenché par PUSH"
+          uname -a
+          whoami
+          env | sort

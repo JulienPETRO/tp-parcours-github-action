@@ -1,0 +1,11 @@
+name: Lancement manuel
+
+on:
+  workflow_dispatch:
+
+jobs:
+  manuel-job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Message manuel
+        run: echo "Ce workflow a été lancé manuellement !"

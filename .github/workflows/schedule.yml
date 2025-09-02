@@ -1,0 +1,14 @@
+name: Cron Job
+
+on:
+  schedule:
+    - cron: '*/5 * * * *' # toutes les 5 minutes (à ajuster en réel)
+  workflow_dispatch:
+
+jobs:
+  cron-job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Exécution planifiée
+        run: echo "Ce workflow est lancé automatiquement via CRON."
+
